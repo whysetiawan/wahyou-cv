@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wahyu Setiawan, Senior Software Engineer (Mobile)</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          ink: '#1a1a1a',
+          muted: '#555555',
+          faint: '#777777',
+          accent: '#1b4f72',
+          rule: '#d8d8d8',
+        },
+      },
+    },
+  }
+</script>
+<style>
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  @page { margin: 14mm; }
+  @media print {
+    .page { box-shadow: none !important; max-width: none !important; padding: 0 !important; }
+    .job { break-inside: avoid; }
+    h2 { break-after: avoid; }
+  }
+</style>
+</head>
+<body class="bg-neutral-100 text-ink text-[14px] leading-relaxed print:bg-white">
+<div class="page mx-auto max-w-[800px] bg-white shadow-[0_2px_16px_rgba(0,0,0,0.08)] my-8 px-[52px] py-12 print:my-0">
+
+  <!-- Header -->
+  <header class="mb-5">
+    <h1 class="text-[30px] font-bold leading-tight tracking-wide">Wahyu Setiawan</h1>
+    <div class="text-accent font-semibold text-[14px] mt-1 tracking-wide">Software Engineer, Mobile &amp; Web</div>
+    <div class="mt-2.5 text-[12.5px] text-muted flex flex-wrap gap-x-3.5 gap-y-1">
+      <span>Bandung, West Java, Indonesia</span>
+      <a href="mailto:whysetiawan27@gmail.com" class="hover:text-accent hover:underline">whysetiawan27@gmail.com</a>
+      <span>+62 851 5855 1727</span>
+      <a href="https://github.com/whysetiawan" class="hover:text-accent hover:underline">github.com/whysetiawan</a>
+      <a href="https://linkedin.com/in/whysetiawan" class="hover:text-accent hover:underline">linkedin.com/in/whysetiawan</a>
+    </div>
+  </header>
+
+  <!-- Summary -->
+  <section class="mt-5">
+    <h2 class="text-[12px] uppercase tracking-[1.5px] text-accent font-bold border-b-2 border-rule pb-1.5 mb-3">Summary</h2>
+    <p class="text-[13.5px] text-neutral-800">Senior-level software engineer with 8+ years shipping production mobile and web apps for fintech, banking, and logistics teams. Deep in React Native, currently building Flip's Globe remittance product used by millions across React Native and Next.js. I drive mobile architecture, chase down performance problems with real numbers, and set the testing and engineering standards other engineers build on.</p>
+  </section>
+
+  <!-- Skills -->
+  <section class="mt-5">
+    <h2 class="text-[12px] uppercase tracking-[1.5px] text-accent font-bold border-b-2 border-rule pb-1.5 mb-3">Key Skills</h2>
+    <dl class="grid grid-cols-[130px_1fr] gap-x-3.5 gap-y-1.5 text-[13px]">
+      <dt class="font-bold text-accent">Mobile</dt><dd class="text-neutral-800">React Native (incl. native modules / native SDK bridging), Flutter</dd>
+      <dt class="font-bold text-accent">Front End</dt><dd class="text-neutral-800">TypeScript, React, Next.js</dd>
+      <dt class="font-bold text-accent">Back End</dt><dd class="text-neutral-800">Node.js, NestJS, Go (Gin), Python (FastAPI)</dd>
+      <dt class="font-bold text-accent">Architecture</dt><dd class="text-neutral-800">Clean Architecture, server-driven UI, modularization, API/domain decoupling</dd>
+      <dt class="font-bold text-accent">Performance</dt><dd class="text-neutral-800">Profiling (Flashlight, React DevTools), FPS &amp; startup optimization</dd>
+      <dt class="font-bold text-accent">Testing</dt><dd class="text-neutral-800">Jest, MSW, unit &amp; e2e, TDD, SonarQube coverage</dd>
+      <dt class="font-bold text-accent">Delivery</dt><dd class="text-neutral-800">Feature flags, staged rollout, CI/CD (GitHub Actions, GitLab CI), trunk-based development</dd>
+      <dt class="font-bold text-accent">AI / ML</dt><dd class="text-neutral-800">TensorFlow, on-device computer vision</dd>
+      <dt class="font-bold text-accent">Data</dt><dd class="text-neutral-800">PostgreSQL, MongoDB, SQLite, Realm</dd>
+      <dt class="font-bold text-accent">Security</dt><dd class="text-neutral-800">DexGuard</dd>
+    </dl>
+  </section>
+
+  <!-- Experience -->
+  <section class="mt-5">
+    <h2 class="text-[12px] uppercase tracking-[1.5px] text-accent font-bold border-b-2 border-rule pb-1.5 mb-3">Professional Experience</h2>
+
+    <div class="job mb-4">
+      <div class="flex justify-between items-baseline flex-wrap gap-x-3 gap-y-0.5">
+        <span class="text-[15px] font-bold">Software Engineer, Mobile &amp; Web, <span class="text-accent">Flip</span></span>
+        <span class="text-[12px] text-faint italic whitespace-nowrap">Jan 2025 - Present · Jakarta (Hybrid)</span>
+      </div>
+      <div class="text-[12.5px] text-muted mt-1 mb-2">PT Fliptech Lentera Inspirasi Pertiwi. On the Globe (international remittance) squad, serving millions of users, I build the transaction flow across mobile (React Native) and web (Next.js), and pitch in on back-end and release engineering.</div>
+      <ul class="list-disc pl-5 marker:text-accent space-y-1.5 text-[13px]">
+        <li>Helped move the Globe transaction flow onto microservices, bringing in <strong>Clean Architecture</strong> so domain logic no longer leaned on API shapes. Future changes got cheaper and safer.</li>
+        <li>Rewrote the Globe <strong>web</strong> form library into a <strong>server-driven</strong> system that scales both horizontally and vertically. Beneficiary forms now render straight from backend config, so even junior engineers can ship new ones without touching the core.</li>
+        <li>Profiled and fixed the Globe landing page, lifting average FPS from <strong>53 to 57.7</strong> and pulling worst-case drops up from under 10 to over 40. Shared what I found with the rest of the mobile team afterward.</li>
+        <li>Designed a backwards-compatible, multi-partner feature-flag schema (iBKR, hospitals) for the Investment and Hospital Bills use case. It went live in v3.35.0 and handled <strong>60+ real transactions in its first week</strong>.</li>
+        <li>Took web test coverage from <strong>11% to 90.7%</strong> and kept mobile above <strong>95%</strong>, and made MSW our standard way to mock APIs. Ran a TDD session to bring the team along.</li>
+        <li>Owned and shipped the WhatsApp support entrypoint end to end across 6 transfer pages, which lifted retention among high-value users by <strong>5%</strong>.</li>
+        <li>Explored code-splitting and Micro-Frontend / OTA approaches (Re.Pack, Expo Updates, Module Federation) through proofs of concept and RFCs, and caught circular dependencies the team had been missing.</li>
+      </ul>
+    </div>
+
+    <div class="job mb-4">
+      <div class="flex justify-between items-baseline flex-wrap gap-x-3 gap-y-0.5">
+        <span class="text-[15px] font-bold">Senior Mobile Engineer, <span class="text-accent">SiCepat Ekspres Indonesia</span></span>
+        <span class="text-[12px] text-faint italic whitespace-nowrap">Mar 2022 - May 2024 · Remote</span>
+      </div>
+      <ul class="list-disc pl-5 marker:text-accent space-y-1.5 text-[13px] mt-2">
+        <li>Developed and maintained core-business mobile apps in React Native <strong>used by millions</strong> across Indonesia's largest logistics network.</li>
+        <li>Led the Rebuild Pick Up mobile team; improved app performance and stabilized a large app on an outdated RN version through careful dependency management.</li>
+        <li>Built internal libraries and wrote <strong>native modules</strong> for React Native, including an on-device computer-vision integration that bridged native SDKs and cut development effort for the team.</li>
+        <li>Hardened app security with DexGuard code obfuscation.</li>
+        <li>Co-authored mobile code standards and guidelines; drove React Native version upgrades to clear tech debt.</li>
+      </ul>
+    </div>
+
+    <div class="job mb-4">
+      <div class="flex justify-between items-baseline flex-wrap gap-x-3 gap-y-0.5">
+        <span class="text-[15px] font-bold">Senior Front End Engineer, <span class="text-accent">PT Teknologi Karya Digital Nusa Tbk. (TKDN)</span></span>
+        <span class="text-[12px] text-faint italic whitespace-nowrap">May 2024 - Nov 2024 · Jakarta</span>
+      </div>
+      <ul class="list-disc pl-5 marker:text-accent space-y-1.5 text-[13px] mt-2">
+        <li>Built and maintained multiple client apps from scratch (transportation domain) using Flutter, React Native, and Next.js.</li>
+        <li>Led the mobile team to deliver clean, performant code following agreed design patterns and code standards.</li>
+        <li>Established Git trunk-based development and CI/CD pipelines that analyze, test, and deploy automatically.</li>
+      </ul>
+    </div>
+
+    <div class="job mb-4">
+      <div class="flex justify-between items-baseline flex-wrap gap-x-3 gap-y-0.5">
+        <span class="text-[15px] font-bold">Mobile Engineer, <span class="text-accent">Ihsan Solusi Informatika</span></span>
+        <span class="text-[12px] text-faint italic whitespace-nowrap">Dec 2017 - Mar 2022</span>
+      </div>
+      <ul class="list-disc pl-5 marker:text-accent space-y-1.5 text-[13px] mt-2">
+        <li>Built and maintained mobile + web apps from scratch for banking and fintech clients; published to Google Play and the App Store.</li>
+        <li>Migrated a production codebase from React Native to Flutter; delivered mobile banking apps (BMT BUS, BJB Syariah) and a BANSOS aid-distribution app with an offline-capable API layer for low-connectivity field use.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="flex justify-between items-baseline flex-wrap gap-x-3 gap-y-0.5">
+        <span class="text-[15px] font-bold">Project-based &amp; Part-time, <span class="text-accent">Qalboo, Kodegiri, Sanbersy</span></span>
+        <span class="text-[12px] text-faint italic whitespace-nowrap">2017 - 2022</span>
+      </div>
+      <ul class="list-disc pl-5 marker:text-accent space-y-1.5 text-[13px] mt-2">
+        <li>Shipped React Native and Flutter apps for various clients; built a runtime feature-flag system and a Node.js/NestJS backend for a travel-agency product.</li>
+      </ul>
+    </div>
+
+  </section>
+
+  <!-- Education -->
+  <section class="mt-5">
+    <h2 class="text-[12px] uppercase tracking-[1.5px] text-accent font-bold border-b-2 border-rule pb-1.5 mb-3">Education</h2>
+    <div class="font-bold text-[14px]">B.Sc. Computer Science, Universitas Pendidikan Indonesia</div>
+    <div class="text-[12.5px] text-faint">2019 - 2023 · GPA 3.32</div>
+    <ul class="list-disc pl-5 marker:text-accent space-y-1.5 text-[13px] mt-2">
+      <li><strong>Thesis:</strong> benchmarked lightweight face-recognition CNNs (GhostFaceNet, MobileFaceNet, MobileNetV3) with ArcFace loss on CASIA-WebFace; evaluated accuracy (LFW, CFP-FP, AgeDB-30) and on-device Android inference speed.</li>
+      <li><strong>MobileFaceNet</strong> won on accuracy; <strong>MobileNetV3</strong> won on mobile speed, the accuracy-vs-latency tradeoff that matters for on-device deployment.</li>
+    </ul>
+  </section>
+
+</div>
+</body>
+</html>
