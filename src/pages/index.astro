@@ -101,8 +101,12 @@ function bold(s: string) {
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href={`${import.meta.env.BASE_URL}favicon.svg`} type="image/svg+xml" />
   <title>{contact.name}, Software Engineer</title>
   <meta name="description" content={metaDescription} />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" />
 </head>
 <body class="bg-page text-ink font-sans text-base leading-relaxed antialiased min-h-screen">
 
@@ -196,7 +200,6 @@ function bold(s: string) {
 </html>
 
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
 
   html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
 
