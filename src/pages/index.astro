@@ -11,6 +11,9 @@ const contact = {
   linkedin: 'https://linkedin.com/in/whysetiawan',
 };
 
+const metaDescription =
+  'Wahyu Setiawan — Full Stack Software Engineer with 8+ years in mobile and web, currently building fintech products at Flip.';
+
 const summary =
   "Senior-level software engineer with 8+ years shipping production mobile and web apps for fintech, banking, and logistics teams. Deep in React Native, currently building Flip's Globe remittance product used by millions across React Native and Next.js. Drives mobile architecture, resolves performance issues with data-driven analysis, and sets the testing and engineering standards other engineers build on.";
 
@@ -99,6 +102,7 @@ function bold(s: string) {
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{contact.name}, Software Engineer</title>
+  <meta name="description" content={metaDescription} />
 </head>
 <body class="bg-page text-ink font-sans text-base leading-relaxed antialiased min-h-screen">
 
