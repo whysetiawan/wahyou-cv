@@ -1,0 +1,226 @@
+---
+import '../styles/global.css';
+
+const contact = {
+  name: 'Wahyu Setiawan',
+  role: 'Software Engineer, Mobile & Web',
+  location: 'Bandung, Indonesia',
+  email: 'whysetiawan27@gmail.com',
+  phone: '+62 851 5855 1727',
+  github: 'https://github.com/whysetiawan',
+  linkedin: 'https://linkedin.com/in/whysetiawan',
+};
+
+const summary =
+  "Senior-level software engineer with 8+ years shipping production mobile and web apps for fintech, banking, and logistics teams. Deep in React Native, currently building Flip's Globe remittance product used by millions across React Native and Next.js. Drives mobile architecture, resolves performance issues with data-driven analysis, and sets the testing and engineering standards other engineers build on.";
+
+const experience = [
+  {
+    title: 'Software Engineer, Flip',
+    dates: 'Jan 2025 – Present · Jakarta (Hybrid)',
+    context:
+      'On the Globe (international remittance) squad, serving millions of users, building the transaction flow across mobile (React Native) and web (Next.js), and contributing to back-end and release engineering.',
+    bullets: [
+      'Helped move the Globe transaction flow onto microservices, bringing in **Clean Architecture** so domain logic no longer leaned on API shapes. Future changes got cheaper and safer.',
+      'Rewrote the Globe web form library, which used to be slow and painful to change, into a **server-driven** system that scales both horizontally and vertically. Beneficiary forms now render straight from backend config, so even junior engineers can ship new ones without touching the core.',
+      'Profiled and fixed the Globe landing page, lifting average FPS from **53 to 57.7** and pulling worst-case drops up from under 10 to over 40. Shared what I found with the rest of the mobile team afterward.',
+      'Designed a backwards-compatible, multi-partner feature-flag schema (iBKR, hospitals) for the Investment and Hospital Bills use case. It went live in v3.35.0 and handled **60+ real transactions in its first week**.',
+      'Took web test coverage from **0% to 96%** and mobile from **11% to 97%**, and made MSW our standard way to mock APIs. Ran a TDD session to bring the team along.',
+      'Owned and shipped the WhatsApp support entrypoint end to end across 6 transfer pages, which lifted retention among high-value users by **5%**.',
+      'Explored code-splitting and Micro-Frontend / OTA approaches (Re.Pack, Expo Updates, Module Federation) through proofs of concept and RFCs, and caught circular dependencies the team had been missing.',
+    ],
+  },
+  {
+    title: 'Senior Front End Engineer, TKDN',
+    dates: 'May 2024 – Nov 2024 · Jakarta',
+    bullets: [
+      'Built and maintained multiple client apps from scratch (transportation domain) using Flutter, React Native, and Next.js.',
+      'Led the mobile team to deliver clean, performant code following agreed design patterns and code standards.',
+      'Established Git trunk-based development and CI/CD pipelines that analyze, test, and deploy automatically.',
+    ],
+  },
+  {
+    title: 'Senior Mobile Engineer, SiCepat Ekspres',
+    dates: 'Mar 2022 – May 2024 · Remote',
+    bullets: [
+      "Developed and maintained core-business mobile apps in React Native used by millions across Indonesia's largest logistics network.",
+      'Led the Rebuild Pick Up mobile team; improved app performance and stabilized a large app on an outdated RN version through careful dependency management.',
+      'Built internal libraries and wrote **native modules** for React Native, including an on-device computer-vision integration that bridged native SDKs and cut development effort for the team.',
+      'Hardened app security with DexGuard code obfuscation, and drove React Native version upgrades to clear tech debt.',
+    ],
+  },
+  {
+    title: 'Mobile Engineer, Ihsan Solusi Informatika',
+    dates: 'Dec 2017 – Mar 2022',
+    bullets: [
+      'Built and maintained mobile and web apps from scratch for banking and fintech clients; published to Google Play and the App Store.',
+      'Migrated a production codebase from React Native to Flutter; delivered mobile banking apps (BMT BUS, BJB Syariah) and a BANSOS aid-distribution app with an offline-capable API layer.',
+    ],
+  },
+  {
+    title: 'Project-based & Part-time',
+    dates: '2017 – 2022',
+    bullets: [
+      'Shipped React Native and Flutter apps for various clients (Qalboo, Kodegiri, Sanbersy); built a runtime feature-flag system and a Node.js/NestJS backend for a travel-agency product.',
+    ],
+  },
+];
+
+const skills = [
+  ['Mobile', 'React Native (incl. native modules / native SDK bridging), Flutter'],
+  ['Front End', 'TypeScript, React, Next.js'],
+  ['Back End', 'Node.js, NestJS, Go (Gin), Python (FastAPI)'],
+  ['Architecture', 'Clean Architecture, server-driven UI, modularization, API/domain decoupling'],
+  ['Performance', 'Profiling (Flashlight, React DevTools), FPS & startup optimization'],
+  ['Testing', 'Jest, MSW, unit & end-to-end, TDD, SonarQube coverage'],
+  ['Delivery', 'Feature flags, staged rollout, CI/CD (GitHub Actions, GitLab CI), trunk-based development'],
+  ['AI / ML', 'TensorFlow, on-device computer vision'],
+  ['Data', 'PostgreSQL, MongoDB, SQLite, Realm'],
+  ['Security', 'DexGuard'],
+];
+
+const education = {
+  degree: 'B.Sc. Computer Science',
+  school: 'Universitas Pendidikan Indonesia · 2019 – 2023',
+  thesisTitle: 'Analysis of CNN GhostFaceNet, MobileFaceNet and MobileNetV3 Models Using ArcFace Loss in Facial Recognition',
+  thesisUrl: 'https://repository.upi.edu/115971/',
+  thesisNote:
+    'Benchmarked GhostFaceNet, MobileFaceNet, and MobileNetV3 with ArcFace loss on CASIA-WebFace; evaluated accuracy (LFW, CFP-FP, AgeDB-30) and on-device Android inference speed.',
+};
+
+// bold markdown: **text** -> <strong>
+function bold(s: string) {
+  return s.replace(/\*\*(.+?)\*\*/g, '<strong class="font-bold text-ink">$1</strong>');
+}
+---
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{contact.name}, Software Engineer</title>
+</head>
+<body class="bg-page text-ink font-sans text-base leading-relaxed antialiased min-h-screen">
+
+  <button
+    id="print-btn"
+    class="no-print fixed top-5 right-5 z-50 rounded-full border border-ink/20 text-ink bg-[#f5f3ee]/90 backdrop-blur px-4 py-2 text-sm font-semibold tracking-wide hover:bg-ink hover:text-[#f5f3ee] transition-colors"
+  >
+    Download PDF
+  </button>
+
+  <div class="page mx-auto max-w-[620px] px-6 sm:px-8 py-16 sm:py-20">
+
+    <header class="reveal">
+      <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight leading-[1.02]">{contact.name}</h1>
+      <div class="text-ink/70 font-semibold text-sm uppercase tracking-wide mt-2">{contact.role}</div>
+      <div class="mt-4 text-sm text-muted flex flex-wrap gap-x-5 gap-y-1.5">
+        <span>{contact.location}</span>
+        <a href={`mailto:${contact.email}`} class="hover:text-ink transition-colors">{contact.email}</a>
+        <span>{contact.phone}</span>
+        <a href={contact.github} class="hover:text-ink transition-colors">github.com/whysetiawan</a>
+        <a href={contact.linkedin} class="hover:text-ink transition-colors">linkedin.com/in/whysetiawan</a>
+      </div>
+    </header>
+
+    <div class="reveal h-px bg-rule my-8"></div>
+
+    <section class="reveal mb-10">
+      <p class="text-base text-ink/85" set:html={bold(summary)} />
+    </section>
+
+    <section class="reveal mb-10">
+      <div class="text-xs uppercase tracking-[2px] text-faint font-bold mb-5">Experience</div>
+
+      {experience.map((job, i) => (
+        <div class:list={['job', i < experience.length - 1 ? 'pb-7 mb-7 border-b border-rule' : '']}>
+          <div class="flex justify-between items-baseline flex-wrap gap-x-4 gap-y-1">
+            <span class="text-lg font-bold">{job.title}</span>
+            <span class="text-xs text-faint whitespace-nowrap">{job.dates}</span>
+          </div>
+          {job.context && (
+            <div class="text-sm text-muted mt-1.5 mb-3">{job.context}</div>
+          )}
+          <ul class:list={['space-y-2 text-sm text-ink/80', !job.context && 'mt-3']}>
+            {job.bullets.map((b) => (
+              <li
+                class="pl-4 relative before:content-[''] before:absolute before:left-0 before:top-[9px] before:w-[5px] before:h-[5px] before:rounded-full before:bg-ink/40"
+                set:html={bold(b)}
+              />
+            ))}
+          </ul>
+        </div>
+      ))}
+    </section>
+
+    <div class="reveal h-px bg-rule my-8"></div>
+
+    <section class="reveal mb-10">
+      <div class="text-xs uppercase tracking-[2px] text-faint font-bold mb-5">Technical Skills</div>
+      <dl class="grid grid-cols-[100px_1fr] sm:grid-cols-[120px_1fr] gap-x-5 gap-y-2.5 text-sm">
+        {skills.map(([label, value]) => (
+          <Fragment>
+            <dt class="font-bold text-ink/70">{label}</dt>
+            <dd class="text-ink/80">{value}</dd>
+          </Fragment>
+        ))}
+      </dl>
+    </section>
+
+    <div class="reveal h-px bg-rule my-8"></div>
+
+    <section class="reveal">
+      <div class="text-xs uppercase tracking-[2px] text-faint font-bold mb-5">Education</div>
+      <div class="text-lg font-bold">{education.degree}</div>
+      <div class="text-sm text-faint">{education.school}</div>
+      <div class="text-sm font-bold text-ink mt-3">
+        Thesis: <a href={education.thesisUrl} class="font-bold text-ink underline decoration-ink/30 hover:decoration-ink transition-colors">{education.thesisTitle}</a>
+      </div>
+      <ul class="space-y-2 text-sm text-ink/80 mt-2">
+        <li class="pl-4 relative before:content-[''] before:absolute before:left-0 before:top-[9px] before:w-[5px] before:h-[5px] before:rounded-full before:bg-ink/40">
+          {education.thesisNote}
+        </li>
+      </ul>
+    </section>
+
+  </div>
+
+  <script>
+    document.getElementById('print-btn')?.addEventListener('click', () => window.print());
+  </script>
+</body>
+</html>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+  body.bg-page {
+    background-color: #f5f3ee;
+    background-image:
+      radial-gradient(circle at 15% 8%, rgba(23,21,42,.03), transparent 40%),
+      radial-gradient(circle at 85% 20%, rgba(23,21,42,.025), transparent 40%),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
+  }
+
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+  .reveal { opacity: 0; animation: fadeUp .55s cubic-bezier(.22,.61,.36,1) forwards; }
+  .reveal:nth-child(1) { animation-delay: .03s; }
+  .reveal:nth-child(2) { animation-delay: .10s; }
+  .reveal:nth-child(3) { animation-delay: .17s; }
+  .reveal:nth-child(4) { animation-delay: .24s; }
+  .reveal:nth-child(5) { animation-delay: .31s; }
+  .reveal:nth-child(6) { animation-delay: .38s; }
+  @media (prefers-reduced-motion: reduce) { .reveal { animation: none; opacity: 1; } }
+
+  @page { margin: 15mm; }
+  @media print {
+    body { background: #fff !important; }
+    .reveal { opacity: 1 !important; animation: none !important; }
+    .no-print { display: none !important; }
+    .page { max-width: none !important; padding: 0 !important; margin: 0 !important; }
+    .job { break-inside: avoid; }
+    h2 { break-after: avoid; }
+  }
+</style>
