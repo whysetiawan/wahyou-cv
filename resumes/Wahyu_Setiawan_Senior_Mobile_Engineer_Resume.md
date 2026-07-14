@@ -9,7 +9,7 @@ github.com/whysetiawan · linkedin.com/in/whysetiawan
 
 ## Summary
 
-Senior-level software engineer with 8+ years shipping production mobile and web apps for fintech, banking, and logistics teams. Deep in React Native, currently building Flip's Globe remittance product used by millions across React Native and Next.js. I drive mobile architecture, chase down performance problems with real numbers, and set the testing and engineering standards other engineers build on.
+Senior-level software engineer with 8+ years shipping production mobile and web apps for fintech, banking, and logistics teams. Deep in React Native, currently building Flip's Globe remittance product used by millions across React Native and Next.js. Drives mobile architecture, resolves performance issues with data-driven analysis, and sets the testing and engineering standards other engineers build on.
 
 ---
 
