@@ -30,6 +30,7 @@ const experience: Job[] = [
       {
         label: '2026 · Payout service and backend ownership',
         bullets: [
+          'Top contributor to the Globe web app at **flip.id/id/globe** (Next.js). Wrote its Clean Architecture and DDD guide, which sets the layer rules the team follows, and built the integration test setup the module runs on.',
           'Moved the Globe mobile and web transfer flows from the monolith to a dedicated payout service, using **Clean Architecture** so domain logic stopped depending on API shapes. Rolled the client side out behind feature flags and made it the default in Sep 2026. On the backend, helped remove the legacy path once the rollout was complete.',
           'Built money-movement endpoints in **Go**: a capped update-amount API with unique-code matching, scoped auth, and a maintenance switch, plus partner callbacks verified by status inquiry before they publish.',
           'Fixed slow queries on FX history and the transaction list with a targeted index and a narrower indexed search. Added audit logging across the payout service and pricing engine.',
