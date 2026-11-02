@@ -15,22 +15,39 @@ const metaDescription =
   'Wahyu Setiawan — Full Stack Software Engineer with 8+ years in mobile and web, currently building fintech products at Flip.';
 
 const summary =
-  "Senior-level software engineer with 8+ years shipping production mobile and web apps for fintech, banking, and logistics teams. Deep in React Native, currently building Flip's Globe remittance product used by millions across React Native and Next.js. Drives mobile architecture, resolves performance issues with data-driven analysis, and sets the testing and engineering standards other engineers build on.";
+  "Full stack software engineer with 8+ years shipping production mobile and web apps for fintech, banking, and logistics teams. At Flip, owns the Globe remittance product end to end across **React Native, Next.js, and Go**, serving millions of users. Moved its mobile and web flows from the monolith to a dedicated payout service, sets the testing standards the team builds on, and fixes performance problems with data, not guesses.";
 
-const experience = [
+type Phase = { label: string; bullets: string[] };
+type Job = { title: string; dates: string; context?: string; bullets?: string[]; phases?: Phase[] };
+
+const experience: Job[] = [
   {
     title: 'Software Engineer, Flip',
     dates: 'Jan 2025 – Present · Jakarta (Hybrid)',
     context:
-      'On the Globe (international remittance) squad, serving millions of users, building the transaction flow across mobile (React Native) and web (Next.js), and contributing to back-end and release engineering.',
-    bullets: [
-      'Helped move the Globe transaction flow onto microservices, bringing in **Clean Architecture** so domain logic no longer leaned on API shapes. Future changes got cheaper and safer.',
-      'Rewrote the Globe web form library, which used to be slow and painful to change, into a **server-driven** system that scales both horizontally and vertically. Beneficiary forms now render straight from backend config, so even junior engineers can ship new ones without touching the core.',
-      'Profiled and fixed the Globe landing page, lifting average FPS from **53 to 57.7** and pulling worst-case drops up from under 10 to over 40. Shared what I found with the rest of the mobile team afterward.',
-      'Designed a backwards-compatible, multi-partner feature-flag schema (iBKR, hospitals) for the Investment and Hospital Bills use case. It went live in v3.35.0 and handled **60+ real transactions in its first week**.',
-      'Took web test coverage from **0% to 96%** and mobile from **11% to 97%**, and made MSW our standard way to mock APIs. Ran a TDD session to bring the team along.',
-      'Owned and shipped the WhatsApp support entrypoint end to end across 6 transfer pages, which lifted retention among high-value users by **5%**.',
-      'Explored code-splitting and Micro-Frontend / OTA approaches (Re.Pack, Expo Updates, Module Federation) through proofs of concept and RFCs, and caught circular dependencies the team had been missing.',
+      'On the Globe (international remittance) squad, serving millions of users. Builds the transfer flow on mobile (React Native) and web (Next.js, b2c-web.flip.id), contributes to Go services in the payout backend, and maintains the internal operations portal.',
+    phases: [
+      {
+        label: '2026 · Payout service and backend ownership',
+        bullets: [
+          'Moved the Globe mobile and web transfer flows from the monolith to a dedicated payout service, using **Clean Architecture** so domain logic stopped depending on API shapes. Rolled the client side out behind feature flags and made it the default in Sep 2026. On the backend, helped remove the legacy path once the rollout was complete.',
+          'Built money-movement endpoints in **Go**: a capped update-amount API with unique-code matching, scoped auth, and a maintenance switch, plus partner callbacks verified by status inquiry before they publish.',
+          'Fixed slow queries on FX history and the transaction list with a targeted index and a narrower indexed search. Added audit logging across the payout service and pricing engine.',
+          'Built internal tools for the operations team: bulk actions with multi-ID search, beneficiary preset rules, and downtime and RFI management on the new service.',
+          'Upgraded two Next.js apps to **Next.js 16 and React 19**, closing a security advisory. Fixed a CDN cache incident and added a check to every merge request so it cannot return.',
+        ],
+      },
+      {
+        label: '2025 · Globe mobile and web build-out',
+        bullets: [
+          'Rewrote the Globe form library, which used to be slow and painful to change, into a **server-driven** system. Beneficiary forms now render straight from backend config, so even junior engineers can ship new ones without touching the core.',
+          'Profiled and fixed the Globe home screen, where every international transfer starts, lifting average FPS from **53 to 57.7** and pulling worst-case drops up from under 10 to over 40. Shared what I found with the rest of the mobile team afterward.',
+          'Designed a backwards-compatible, multi-partner feature-flag schema (iBKR, hospitals) for the Investment and Hospital Bills use case. It went live in v3.35.0 and handled **60+ real transactions in its first week**.',
+          'Raised mobile test coverage to **95%** in SonarQube and Globe web coverage from **0% to 96%**, and made MSW the standard way to mock APIs. Ran a TDD session to bring the team along.',
+          'Shipped the WhatsApp support entrypoint across 6 transfer pages, lifting retention among high-value users by **5%**.',
+          'Explored code-splitting and Micro-Frontend / OTA approaches (Re.Pack, Expo Updates, Module Federation) through proofs of concept and RFCs, and caught circular dependencies the team had been missing.',
+        ],
+      },
     ],
   },
   {
@@ -49,7 +66,7 @@ const experience = [
       "Developed and maintained core-business mobile apps in React Native used by millions across Indonesia's largest logistics network.",
       'Led the Rebuild Pick Up mobile team; improved app performance and stabilized a large app on an outdated RN version through careful dependency management.',
       'Built internal libraries and wrote **native modules** for React Native, including an on-device computer-vision integration that bridged native SDKs and cut development effort for the team.',
-      'Hardened app security with DexGuard code obfuscation, and drove React Native version upgrades to clear tech debt.',
+      'Hardened app security with DexGuard code obfuscation, co-authored the mobile code standards, and drove React Native version upgrades to clear tech debt.',
     ],
   },
   {
@@ -70,16 +87,17 @@ const experience = [
 ];
 
 const skills = [
-  ['Mobile', 'React Native (incl. native modules / native SDK bridging), Flutter'],
+  ['Mobile', 'React Native (incl. native modules / native SDK bridging), Reanimated, Flutter'],
   ['Front End', 'TypeScript, React, Next.js'],
-  ['Back End', 'Node.js, NestJS, Go (Gin), Python (FastAPI)'],
-  ['Architecture', 'Clean Architecture, server-driven UI, modularization, API/domain decoupling'],
-  ['Performance', 'Profiling (Flashlight, React DevTools), FPS & startup optimization'],
-  ['Testing', 'Jest, MSW, unit & end-to-end, TDD, SonarQube coverage'],
-  ['Delivery', 'Feature flags, staged rollout, CI/CD (GitHub Actions, GitLab CI), trunk-based development'],
+  ['Back End', 'Go (in production at Flip), Node.js, NestJS, Python (FastAPI)'],
+  ['Infra', 'Helm, Kubernetes (GitOps), API gateway routing, GitLab CI, GitHub Actions'],
+  ['Architecture', 'Clean Architecture, server-driven UI, expand-migrate-contract migrations, API/domain decoupling'],
+  ['Observability', 'Sentry tracing, TTI tracking, profiling (Flashlight, React DevTools), audit logging'],
+  ['Testing', 'Jest, MSW, unit & integration, TDD, SonarQube coverage'],
+  ['Delivery', 'Feature flags, staged rollout, trunk-based development'],
   ['AI / ML', 'TensorFlow, on-device computer vision'],
   ['Data', 'PostgreSQL, MongoDB, SQLite, Realm'],
-  ['Security', 'DexGuard'],
+  ['Security', 'DexGuard, dependency advisory patching'],
 ];
 
 const education = {
@@ -88,8 +106,11 @@ const education = {
   thesisTitle: 'Analysis of CNN GhostFaceNet, MobileFaceNet and MobileNetV3 Models Using ArcFace Loss in Facial Recognition',
   thesisUrl: 'https://repository.upi.edu/115971/',
   thesisNote:
-    'Benchmarked GhostFaceNet, MobileFaceNet, and MobileNetV3 with ArcFace loss on CASIA-WebFace; evaluated accuracy (LFW, CFP-FP, AgeDB-30) and on-device Android inference speed.',
+    'Benchmarked three lightweight face-recognition CNNs with ArcFace loss for on-device Android use. MobileFaceNet won on accuracy and MobileNetV3 won on speed, the tradeoff that decides on-device deployment.',
 };
+
+const bulletClass =
+  "pl-4 relative before:content-[''] before:absolute before:left-0 before:top-[9px] before:w-[5px] before:h-[5px] before:rounded-full before:bg-ink/40";
 
 // bold markdown: **text** -> <strong>
 function bold(s: string) {
@@ -149,14 +170,23 @@ function bold(s: string) {
           {job.context && (
             <div class="text-sm text-muted mt-1.5 mb-3">{job.context}</div>
           )}
-          <ul class:list={['space-y-2 text-sm text-ink/80', !job.context && 'mt-3']}>
-            {job.bullets.map((b) => (
-              <li
-                class="pl-4 relative before:content-[''] before:absolute before:left-0 before:top-[9px] before:w-[5px] before:h-[5px] before:rounded-full before:bg-ink/40"
-                set:html={bold(b)}
-              />
-            ))}
-          </ul>
+          {job.bullets && (
+            <ul class:list={['space-y-2 text-sm text-ink/80', !job.context && 'mt-3']}>
+              {job.bullets.map((b) => (
+                <li class={bulletClass} set:html={bold(b)} />
+              ))}
+            </ul>
+          )}
+          {job.phases?.map((phase, p) => (
+            <div class:list={['phase', p > 0 ? 'mt-5' : 'mt-1']}>
+              <div class="text-xs font-bold uppercase tracking-wide text-ink/70 mb-2">{phase.label}</div>
+              <ul class="space-y-2 text-sm text-ink/80">
+                {phase.bullets.map((b) => (
+                  <li class={bulletClass} set:html={bold(b)} />
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
       ))}
     </section>
