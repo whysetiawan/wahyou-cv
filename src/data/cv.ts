@@ -90,7 +90,7 @@ export const skills = [
   ['Back End', 'Go (in production at Flip), Node.js, NestJS, Python (FastAPI)'],
   ['Infra', 'Helm, Kubernetes (GitOps), API gateway routing, GitLab CI, GitHub Actions'],
   ['Architecture', 'Clean Architecture, server-driven UI, expand-migrate-contract migrations, API/domain decoupling'],
-  ['Observability', 'Sentry tracing, TTI tracking, profiling (Flashlight, React DevTools), audit logging'],
+  ['Observability', 'Sentry tracing, TTI tracking, profiling (Flashlight, React DevTools), Grafana'],
   ['Testing', 'Jest, MSW, unit & integration, TDD, SonarQube coverage'],
   ['Delivery', 'Feature flags, staged rollout, trunk-based development'],
   ['AI / ML', 'TensorFlow, on-device computer vision'],
