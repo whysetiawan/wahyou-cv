@@ -2,8 +2,54 @@
 
 @theme {
   --font-sans: "Plus Jakarta Sans", system-ui, sans-serif;
+  --color-page: #f5f3ee;
   --color-ink: #17152a;
   --color-muted: #6c6785;
   --color-faint: #9490a8;
   --color-rule: #e3dfd6;
+
+  --animate-fade-up: fade-up 0.55s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+  @keyframes fade-up {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
+
+@layer base {
+  html {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
+
+@page {
+  margin: 12mm;
+}
+
+/* Soft ink glow and paper grain behind the CV. Turned off for print. */
+@utility bg-paper-texture {
+  background-image:
+    radial-gradient(circle at 15% 8%, rgb(23 21 42 / 0.03), transparent 40%),
+    radial-gradient(circle at 85% 20%, rgb(23 21 42 / 0.025), transparent 40%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
+}
+
+/* Fade-up on load, staggered by position. Skipped for print and reduced motion. */
+@layer components {
+  .reveal {
+    @apply opacity-0 animate-fade-up;
+  }
+  .reveal:nth-child(1) { animation-delay: 0.03s; }
+  .reveal:nth-child(2) { animation-delay: 0.1s; }
+  .reveal:nth-child(3) { animation-delay: 0.17s; }
+  .reveal:nth-child(4) { animation-delay: 0.24s; }
+  .reveal:nth-child(5) { animation-delay: 0.31s; }
+  .reveal:nth-child(6) { animation-delay: 0.38s; }
+
+  @media (prefers-reduced-motion: reduce), print {
+    .reveal {
+      animation: none;
+      opacity: 1;
+    }
+  }
 }

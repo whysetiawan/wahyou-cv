@@ -1,0 +1,19 @@
+---
+import { bold } from '../lib/bold';
+
+interface Props {
+  items: string[];
+  class?: string;
+}
+
+const { items, class: className } = Astro.props;
+---
+
+<ul class:list={['space-y-2 text-sm text-ink/80', className]}>
+  {items.map((item) => (
+    <li
+      class="pl-4 relative print:break-inside-avoid before:content-[''] before:absolute before:left-0 before:top-[9px] before:w-[5px] before:h-[5px] before:rounded-full before:bg-ink/40"
+      set:html={bold(item)}
+    />
+  ))}
+</ul>
